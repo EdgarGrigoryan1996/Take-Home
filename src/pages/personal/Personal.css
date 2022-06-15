@@ -1,0 +1,25 @@
+.personal-title h2{
+	font-size: 32px;
+}
+
+
+.personal-form{
+	width: 376px;
+	margin: 0 auto;
+}
+.input-block{
+	margin-top: 25px;
+}
+label{
+	text-align: left;
+	display: block;
+	color:#6F8086;
+	font-size: 12px;
+}
+input{
+	border: 0;
+	border-bottom: 1px solid #DFE5F1;
+	width: 100%;
+	outline:none;
+	padding-bottom: 15px;
+}

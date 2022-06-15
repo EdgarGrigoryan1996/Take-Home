@@ -1,0 +1,13 @@
+.welcome-title h2{
+	font-size: 70px;
+}
+.welcome-content p{
+	width: 80%;
+	margin: 0 auto;
+	font-size: 32px;
+	font-family: 'Roboto';
+	font-weight: 900;
+	font-size: 36px;
+	line-height: 42px;
+	text-align: center
+}
