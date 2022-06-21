@@ -16,3 +16,6 @@ code {
 	width: 58%;
 	margin: 50px auto;
 }
+.error-msg{
+	color:rgb(252, 79, 79)
+}

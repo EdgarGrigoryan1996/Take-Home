@@ -1,7 +1,7 @@
 import "./Button.css"
 
-export default function Button({ title }) {
+export default function Button({ title, action }) {
 	return (
-		<button className="btn">{title}</button>
+		<button className="btn" onClick={action}>{title}</button>
 	)
 }

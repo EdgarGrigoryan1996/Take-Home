@@ -1,7 +1,28 @@
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import Button from "../../global/button/Button"
 import "./Agreement.css"
 
 export default function Agreement() {
+	const dispatch = useDispatch()
+	const navigate = useNavigate()
+	const [check, setCheck] = useState({
+		check1: false,
+		check2: false
+	})
+	function addToStore(e) {
+		e.preventDefault()
+		console.log(check)
+		dispatch({
+			type: "AGREEMENTS",
+			payload: {
+				agreement1: check.check1,
+				agreement2: check.check2
+			}
+		})
+		navigate("/user")
+	}
 	return (
 		<div className="agreement-wrapper">
 			<div className="agreement-title">
@@ -14,7 +35,12 @@ export default function Agreement() {
 							<div className="agree-title">Agreement</div>
 							<div className="agreement-block">
 								<div className="checkbox">
-									<input type="checkbox" id="agree" />
+									<input className="checkbox" type="checkbox" id="agree" onChange={(e) => {
+										setCheck({
+											check1: e.target.checked,
+											check2: check.check2
+										})
+									}} />
 								</div>
 								<div className="checkbox-content">
 									<label htmlFor="agree">I agree to the</label>
@@ -24,7 +50,12 @@ export default function Agreement() {
 
 							<div className="agreement-block">
 								<div className="checkbox">
-									<input type="checkbox" id="agree-agreements" />
+									<input className="checkbox" type="checkbox" id="agree-agreements" onChange={(e) => {
+										setCheck({
+											check1: check.check1,
+											check2: e.target.checked,
+										})
+									}} />
 								</div>
 								<div className="checkbox-content">
 									<label htmlFor="agree-agreements">I agree to the folowing agreements:</label>
@@ -41,7 +72,7 @@ export default function Agreement() {
 
 
 					<div className="button">
-						<Button title="agree & create account" />
+						<Button title="agree & create account" action={addToStore} />
 					</div>
 				</form>
 			</div>
